@@ -71,7 +71,9 @@ define( 'NONCE_SALT',       't[05Z2-uRGe@p:FB#R:hn/>_#D{1nmU$*YBxHLDqbDHrIZkS2ea
  *
  * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
  */
-$table_prefix = 'u31_';
+// $table_prefix = 'u31_';
+$table_prefix = 'wp15_';
+$_SERVER['HTTPS'] = 'on';
 
 /**
  * For developers: WordPress debugging mode.
