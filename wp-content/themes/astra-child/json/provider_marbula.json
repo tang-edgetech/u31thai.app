@@ -1,0 +1,17 @@
+[
+    {
+        "product_id": 105,
+        "product": "marbula2",
+        "product_game_id": 163,
+        "game_code": "",
+        "name": "product.wallet_to_provider.marbula2_wallet",
+        "wallet": "marbula2_wallet",
+        "sort_wallet": "marbula2_wallet",
+        "img": "https://fortix2.zol-perda.com/public/assets/provider/new_white/marbula2.png",
+        "icon": "https://fortix2.zol-perda.com/public/assets/provider/new_white/marbula2.png",
+        "required_auth": false,
+        "web_play": true,
+        "direct_login": false,
+        "show_quick_transfer": false
+    }
+]

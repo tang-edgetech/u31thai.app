@@ -1,0 +1,354 @@
+/**
+Theme Name: Astra Child
+Author: Brainstorm Force
+Author URI: http://wpastra.com/about/
+Description: Astra is the fastest, fully customizable & beautiful theme suitable for blogs, personal portfolios and business websites. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with schema.org code integrated so search engines will love your site. Astra offers plenty of sidebar options and widget areas giving you a full control for customizations. Furthermore, we have included special features and templates so feel free to choose any of your favorite page builder plugin to create pages flexibly. Some of the other features: # WooCommerce Ready # Responsive # Compatible with major plugins # Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? Look no further. Astra is fast, fully customizable and beautiful theme!
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: astra-child
+Template: astra
+*/
+
+:root {
+    --color-white: #fff;
+    --primary-color: #4e24dd;
+    --secondary-color: #7059f9;
+}
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+}
+body::-webkit-scrollbar {
+    width: 0.25rem;
+    background-color: var(--primary-color);
+}
+body::-webkit-scrollbar-thumb {
+	background: var(--primary-color);
+	border-radius: 0.188rem;
+}
+body::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+h1, h2, h3, h4, h5, h6, p, a, li, input, textarea, select, label, th, td {
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+.elementor ol, .elementor ul {
+    padding-inline-start: 1.5rem;
+    margin: 0;
+}
+.error-404.not-found {
+    background-color: transparent;
+    padding: 0;
+}
+.error404 main {
+    display: flex;
+    align-items: center;
+}
+.error404 .app #primary {
+    margin: 0;
+}
+.page-404-layout {
+    display: block;
+    width: 100%;
+    max-width: 31.25rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.site, .site-container, .site-main {
+    display: flex;
+}
+.site, .site-container {
+    flex-direction: column;
+    min-height: 100vh;
+}
+.site-main {
+    flex-wrap: wrap;
+}
+.site-container, .site-main, #primary {
+    flex: 1;
+}
+.site-container {
+    width: 100%;
+    max-width: 28.75rem;
+    margin: 0 auto;
+}
+.site #primary, .elementor-widget-text-editor h1, .elementor-widget-text-editor h2, .elementor-widget-text-editor h3, .elementor-widget-text-editor h4, .elementor-widget-text-editor h5, .elementor-widget-text-editor h6, .elementor-widget-text-editor p, .elementor-widget-text-editor pre, .elementor-widget-text-editor blockquote {
+    margin: 0;
+}
+.elementor-widget-text-editor pre, .elementor-widget-text-editor blockquote {
+    color: var(--color-white);
+}
+.site .elementor-widget.elementor-widget-text-editor blockquote {
+    border-color: var(--color-white);
+}
+.site-main .content-area .elementor[data-elementor-type="wp-page"] {
+    padding: 0 1.25rem 1.5rem;
+}
+#masthead, #colophon {
+    position: sticky;
+    display: block;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+}
+#masthead {
+    padding: 0.5rem 0;
+    margin-bottom: 1.25rem;
+    top: 0;
+    background: radial-gradient(133.74% 100.44% at 100% 50%,#231f55 0,#151240 100%)!important;
+}
+#masthead .navbar {
+    padding: 0 1.25rem;
+}
+#masthead .navbar-brand {
+    display: block;
+    max-width: max-content;
+    width: 100%;
+    max-width: 3.125rem;
+}
+#colophon {
+    min-height: 3.125rem;
+    bottom: 0;
+    background: radial-gradient(33.48% 103.75% at 52.2% 0,#531b88 0,#151240 100%);
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+.swiper.menu-swiper .swiper-slide {
+    width: max-content;
+}
+.iconbox-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    background: linear-gradient(180deg, #312d6f, #231f55);
+    text-decoration: none;
+    /* transition: background 0.35s ease; */
+}
+.menu-swiper .iconbox-inner:hover {
+    background: linear-gradient(180deg, #3f3a89, #2e2970);
+}
+.iconbox .iconbox-icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 auto;
+}
+.iconbox-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+}
+.iconbox .iconbox-title {
+    white-space: nowrap;
+}
+.btn, a.btn, button.btn, .iconbox .iconbox-title {
+    font-size: 0.875rem;
+    line-height: 1.188rem;
+}
+.btn, a.btn, button.btn, .btn:hover, a.btn:hover, button.btn:hover, .iconbox .iconbox-title, .iconbox span {
+    color: var(--color-white);
+}
+.btn, a.btn, button.btn {
+    display: inline-block;
+    border-radius: 0.25rem;
+    padding: 0.375rem 1rem;
+    overflow: hidden;
+}
+.btn, a.btn, button.btn, .btn:hover, a.btn:hover, button.btn:hover {
+    border: 1px solid rgb(49, 45, 111);
+}
+.btn, a.btn, button.btn, .btn:hover, a.btn:hover, button.btn:hover, .btn:focus, a.btn:focus, button.btn:focus {
+    outline: none;
+}
+.btn span, a.btn span, button.btn span {
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    z-index: 2;
+}
+.btn.btn-solid, a.btn.btn-solid, button.btn.btn-solid {
+    background: radial-gradient(50% 100% at 50% 0%, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+.btn.btn-solid::before, a.btn.btn-solid::before, button.btn.btn-solid::before {
+    content: '';
+    display: block;
+    top: 0;
+    position: absolute;
+    width: 11.875rem;
+    height: 100%;
+    background: linear-gradient(110deg,hsla(0,0%,100%,0) 25.38%,hsla(0,0%,100%,.75) 53.96%,hsla(0,0%,100%,0) 83.85%);
+    opacity: 0.9;
+    will-change: transform;
+    animation: button_blinking_through 3.5s ease-in-out infinite;
+    z-index: 1;
+}
+.btn.btn-solid:hover, a.btn.btn-solid:hover, button.btn.btn-solid:hover {
+    background: linear-gradient(#584cd2, #584cd2)!important;
+}
+@keyframes button_blinking_through {
+    0% {
+        transform: translateX(-11.875rem);
+    }
+    50% {
+        transform: translateX( calc( 100% + 11.875rem ) );
+    }
+    100% {
+        transform: translateX( calc( 100% + 11.875rem ) );
+    }
+}
+.shineLike-aDiamond {
+    position: absolute;
+    top: -0.375rem;
+    right: -0.375rem;
+    animation: shineStar 2.5s ease-in-out infinite;
+}
+@keyframes shineStar {
+    0% {
+        transform: scale(0) rotate(0);
+        opacity: 0;
+    }   
+    30% {
+        transform: scale(2) rotate(180deg);
+        opacity: 1;
+    }
+    50%, 100% {
+        transform: scale(0) rotate(180deg);
+        opacity: 0;
+    }
+}
+#masthead .btn-outline span, #masthead .btn-solid span {
+    font-weight: 600;
+}
+.hero-banner-slider {
+    padding: 0 1.25rem;
+}
+.hero-banner-slider .swiper-slide {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.herobanner-navigation {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.herobanner-navigation .hero-nav {
+    display: block;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--primary-color);
+}
+.herobanner-navigation .hero-nav:hover {
+    background: #5d36dd;
+}
+.herobanner-pagination {
+    bottom: 0.313rem;
+    left: 0;
+    width: 100%;
+}
+.herobanner-pagination .swiper-pagination-bullet {
+    margin: 0!important;
+    background-color: var(--primary-color);
+    opacity: 0.6;
+}
+.herobanner-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+.footer-navbar .navbar-nav .nav-item a {
+    font-size: 0.625rem;
+    line-height: 1rem;
+}
+.footer-navbar .navbar-nav .nav-item.active > a {
+    pointer-events: none;
+}
+.footer-navbar .navbar-nav .nav-item:not(.active) > a {
+    opacity: 0.6;
+}
+.footer-navbar .navbar-nav .nav-item:not(.active) > a:hover {
+    opacity: 0.85;
+}
+.footer-navbar .navbar-nav .nav-item .iconbox-icon {
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0 auto 0.313rem;
+}
+.footer-navbar .navbar-nav .nav-item:nth-child(3) a {
+    position: absolute;
+    min-width: 3.75rem;
+    min-height: 3.75rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: -1rem;
+    background: transparent;
+    opacity: 1;
+}
+.footer-navbar .navbar-nav .nav-item:nth-child(3) a::before {
+    max-height: 3.75rem;
+    max-width: 3.75rem;
+    height: 3.75rem;
+    width: 3.75rem;
+}
+.footer-navbar .navbar-nav .nav-item:nth-child(3) a::before, .footer-navbar .navbar-nav .nav-item:nth-child(3) a::after {
+    content: "";
+    position: absolute;
+    display: block;
+}
+.footer-navbar .navbar-nav .nav-item:nth-child(3) a::before {
+    background-image: url(../astra-child/images/middle-btn-bg.png);
+    bottom: 0;
+    left: 50%;
+    margin: auto;
+    margin-left: -1.75rem;
+    border-radius: 50%;
+    animation: floatingNav 15s linear infinite;
+}
+@keyframes floatingNav {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+.footer-navbar .navbar-nav .nav-item:nth-child(3) a::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    max-width: 3.75rem;
+    max-height: 3.75rem;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #9c40ff, #3c39a8);
+    border-radius: 50%;
+    padding: 0.625rem;
+    box-shadow: 0 0 transparent, 0 0 transparent, inset 0 2px 1px 0 hsla(0, 0%, 100%, .24), inset 0 4px 4px 0 hsla(0, 0%, 100%, .25);
+}
