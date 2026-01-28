@@ -20,13 +20,13 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'u31thai_app' );
+define( 'DB_NAME', 'seot3_wp15' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'seot3_wp15' );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', '5o!RX~I7V)gF6ri9' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -71,7 +71,7 @@ define( 'NONCE_SALT',       't[05Z2-uRGe@p:FB#R:hn/>_#D{1nmU$*YBxHLDqbDHrIZkS2ea
  *
  * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
  */
-// $table_prefix = 'u31_';
+
 $table_prefix = 'wp15_';
 $_SERVER['HTTPS'] = 'on';
 
@@ -87,7 +87,12 @@ $_SERVER['HTTPS'] = 'on';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
+// define('WP_DEBUG', false); 
+// define('WP_DEBUG_DISPLAY', false); 
+// define('WP_DEBUG_LOG', false);
+define('WP_DEBUG', true); 
+define('WP_DEBUG_DISPLAY', true); 
+define('WP_DEBUG_LOG', true);
 
 /* Add any custom values between this line and the "stop editing" line. */
 

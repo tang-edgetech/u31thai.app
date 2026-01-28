@@ -1,4 +1,4 @@
-	<?php
+<?php
 /**
  * Astra Child Theme functions and definitions
  *
@@ -127,6 +127,7 @@ add_action( 'init', function() {
     if ( function_exists( 'pll_register_string' ) ) {
         pll_register_string('header_login_label', 'Login', 'Theme Labels', true);
         pll_register_string('header_register_label', 'Register', 'Theme Labels', true);
+        pll_register_string('label_language', 'Language', 'Label - Language', true);
     }
 });
 
@@ -137,24 +138,30 @@ function shortcode_custom_header_navigation() {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$logo_url       = wp_get_attachment_image_url( $custom_logo_id, 'full' );
 	$logo_alt       = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+	$language_switcher = get_field('language_switcher', 'option');
 	?>
 	<nav class="navbar">
 		<div class="navbar-row d-flex flex-row flex-wrap justify-content-center align-items-center w-100">
-			<div class="col-6">
+			<div class="col-4">
 				<a href="<?= $home_url;?>" class="navbar-brand p-0">
 				<?= ( !empty($logo_url) ) ? '<img src="'.$logo_url.'" class="img-fluid w-100 h-100"/>' : '<p class="mb-0">'.$site_title.'</p>'; ?>
 				</a>
 			</div>
-			<div class="col-6">
+			<div class="col-8">
 				<div class="col-inner d-flex flex-row justify-content-end align-items-center gap-2">
-				<?php
-				$header_cta = get_field('header_cta', 'option');
-				$login_link = (!empty($header_cta['login_link'])) ? $header_cta['login_link']['url'] : '#';
-				$register_link = (!empty($header_cta['register_link'])) ? $header_cta['register_link']['url'] : '#';
-				?>
-					<a href="<?= $login_link;?>" class="btn btn-outline"><span><?= pll__( 'Login' );?></span></a>
-					<a href="<?= $register_link;?>" class="btn btn-solid"><span><?= pll__( 'Register' );?></span></a>
-					<?= BUTTON_SOLID_BLINKING;?>
+					<?php if ( $language_switcher ) : ?>
+					<button type="button" class="btn-language" id="change-language"><i class="fa fa-globe" aria-hidden="true"></i><span class="d-none">Language</span></button>
+					<?php endif; ?>
+					<div class="btn-wrapper d-flex flex-row justify-content-end align-items-center gap-2">
+						<?php
+						$header_cta = get_field('header_cta', 'option');
+						$login_link = (!empty($header_cta['login_link'])) ? $header_cta['login_link']['url'] : '#';
+						$register_link = (!empty($header_cta['register_link'])) ? $header_cta['register_link']['url'] : '#';
+						?>
+							<a href="<?= $login_link;?>" class="btn btn-outline"><span><?= pll__( 'Login' );?></span></a>
+							<a href="<?= $register_link;?>" class="btn btn-solid"><span><?= pll__( 'Register' );?></span></a>
+							<?= BUTTON_SOLID_BLINKING;?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -213,3 +220,20 @@ function shortcode_custom_footer_base() {
 	return ob_get_clean();
 }
 add_shortcode('shortcode_custom_footer_base', 'shortcode_custom_footer_base');
+
+add_action( 'wp_footer', function() {
+	$language_switcher = get_field('language_switcher', 'option');
+	if( $language_switcher ) :
+	echo '<div class="pll-popup-overlay"></div>';
+	echo '<div class="pll-popup">
+		<div class="pll-popup-inner">
+			<div class="pll-popup-body">
+				<h3 class="pll-popup-title">'. pll__( 'Language' ) .'</h3>
+				<ul class="pll-language-selection p-0">';
+					pll_the_languages( array( 'show_names' => 1, 'show_flags' => 1 ) );
+				echo '</ul>
+			</div>
+		</div>
+	</div>';
+	endif;
+}, 50);

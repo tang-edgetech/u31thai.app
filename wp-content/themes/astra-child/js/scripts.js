@@ -1,4 +1,50 @@
 $(document).ready(function() {
+	$(document).on('click', '#change-language', function (e) {
+		e.preventDefault();
+		var $button = $(this),
+			$body = $('body'),
+			$overlay = $('.pll-popup-overlay'),
+			$popup = $('.pll-popup');
+		setTimeout(function() {
+			$button.prop('disabled', false);
+		});
+		if( $body.hasClass('pll-popup-opened') ) {
+			$body.removeClass('pll-popup-opened');
+		}
+		else {
+			$body.addClass('pll-popup-opened');
+			$overlay.addClass('active');
+			setTimeout(function() {
+				$popup.addClass('active');
+			}, 150);
+			setTimeout(function() {
+				$overlay.addClass('show');
+			}, 250);
+			setTimeout(function() {
+				$popup.addClass('show');
+			}, 350);
+		}
+	});
+	
+	$(document).on('click', '.pll-popup-overlay.active.show', function(e) {
+		e.preventDefault();
+		var $overlay = $(this),
+			$body = $('body'),
+			$popup = $('.pll-popup');
+		if( $body.hasClass('pll-popup-opened') ) {
+			$popup.removeClass('show');
+			setTimeout(function() {
+				$overlay.removeClass('show');
+			}, 150);
+			setTimeout(function() {
+				$popup.removeClass('active');
+			}, 250);
+			setTimeout(function() {
+				$overlay.removeClass('active');
+			}, 350);
+		}
+	});
+	
     if( $('.main-menu-slider')[0] ) {
         $('.main-menu-slider').each(function() {
             var $slider = $(this),

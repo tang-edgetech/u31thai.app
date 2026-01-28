@@ -33,27 +33,21 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 </head>
 
 <body <?php astra_schema_body(); ?> <?php body_class(); ?>>
-<?php astra_body_top(); ?>
-<?php wp_body_open(); ?>
+	<?php astra_body_top(); ?>
+	<?php wp_body_open(); ?>
 
-<a
-	class="skip-link screen-reader-text"
-	href="#content">
-		<?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>
-</a>
+	<div class="hfeed site" id="page">
+		<div class="site-container">
+			<?php
+				astra_header_before();
 
-<div class="hfeed site" id="page">
-	<div class="site-container">
-		<?php
-			astra_header_before();
+				astra_header();
 
-			astra_header();
+				astra_header_after();
 
-			astra_header_after();
-
-			astra_content_before();
-		?>
-		<main class="site-main" id="main">	
-		<?php
-			// astra_content_top(); 
-		?>
+				astra_content_before();
+			?>
+			<main class="site-main" id="main">	
+			<?php
+				// astra_content_top(); 
+			?>
