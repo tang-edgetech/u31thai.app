@@ -21,6 +21,7 @@ get_header(); ?>
 
 	<div id="primary" <?php astra_primary_class(); ?>>
 		<?php the_content();?>
+		<?php section_footer_disclaimer();?>
 	</div>
 
 <?php 

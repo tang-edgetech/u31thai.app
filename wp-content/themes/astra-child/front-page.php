@@ -39,6 +39,7 @@ get_header(); ?>
             }
         }
         ?>
+		<?php section_footer_disclaimer();?>
 	</div>
 <?php 
 get_footer(); 
