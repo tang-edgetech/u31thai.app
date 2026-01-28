@@ -5,7 +5,7 @@ $show_navigation = $home_banner['show_navigation'];
 $show_pagination = $home_banner['show_pagination'];
 $sliders = $home_banner['sliders'];
 ?>
-<div class="hero-banner-slider mb-2">
+<div class="hero-banner-slider mb-4">
     <div class="swiper menu-swiper hero-swiper-<?= $swiper_id;?>" data-swiper-id="<?= $swiper_id;?>" id="hero-swiper-<?= $swiper_id;?>">
         <div class="swiper-wrapper">
         <?php foreach( $sliders as $slide ) { 
@@ -22,12 +22,6 @@ $sliders = $home_banner['sliders'];
         <?php } ?>
         </div>
         <?php
-        if( $show_navigation ) { ?>
-            <div class="herobanner-navigation position-absolute d-flex justify-content-between align-items-center z-1">
-                <button type="button" class="hero-nav hero-nav-prev" id="hero-nav-prev"><i class="fa fa-chevron-left"></i></button>
-                <button type="button" class="hero-nav hero-nav-next" id="hero-nav-next"><i class="fa fa-chevron-right"></i></button>
-            </div>
-        <?php }
         if( $show_pagination ) { ?>
             <div class="herobanner-pagination position-absolute d-flex justify-content-center align-items-center gap-2 w-100 z-1"></div>
         <?php }

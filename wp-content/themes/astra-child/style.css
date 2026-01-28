@@ -116,9 +116,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 #masthead .navbar-brand {
     display: block;
-    max-width: max-content;
-    width: 100%;
-    max-width: 3.125rem;
+    width: max-content;
+    height: 3.125rem;
+}
+#masthead .navbar-brand img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center left;
 }
 #colophon {
     min-height: 3.125rem;
